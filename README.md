@@ -10,7 +10,7 @@ java -cp [Local directory to jar file] [com.qmedic.spades.task.SpadesSubmit] [-c
    * Example:  output/SpadesAnalytics.jar (here SpadesAnalytics.jar is a runnable jar file in the local computer)
 * [com.qmedic.spades.task.SpadesSubmit]: the class to submit the job to EMR 
 * [s3n directory to jar file]: The cloud directory for jar file
-   * Example: spades-data/development/zhibiao/SpadesAnalytics.jar (SpadesAnalytics.jar is stored in the directory “spades-data/development/zhibiao” of s3)
+   * Example: spades-data/development/user/SpadesAnalytics.jar (SpadesAnalytics.jar is stored in the directory “spades-data/development/user” of s3)
 * [class name in jar file of s3n]: The runnable class in the jar file in S3
    * Example: com.qmedic.spades.task.examples.mapreduce.WearAndNonWear.ChoiMethodClean(The class to identify wear and non-wear based on input data activity count)
 * [data input path]: Cloud directory for source data
@@ -58,14 +58,14 @@ The parameter input format for passing parameters to runnable class is restricte
 
 **Example**
 ```ShellSession
--c false -f s3n -j spades-data/development/zhibiao/SpadesAnalytics.jar -a com.qmedic.spades.task.examples.mapreduce.WearAndNonWear.ChoiMethodClean -i spades-data/development/stanford/2/StanfordStudyYouth2/1/MetaData-ActivityCountClean-2015-10-29-10-50-21-021/*
+-c false -f s3n -j spades-data/development/user/SpadesAnalytics.jar -a com.qmedic.spades.task.examples.mapreduce.WearAndNonWear.ChoiMethodClean -i spades-data/development/stanford/2/StanfordStudyYouth2/1/MetaData-ActivityCountClean-2015-10-29-10-50-21-021/*
 ```
 * [false]: Input value for [-c] command which doesn’t allow cross participants
    * Example: false/true
 * [s3n]: Input value for [-f] command which runs in s3n file system
    * Example: s3n/hdfs
 * [s3n directory to jar file]: Input jar directory in s3n for [-j] command which specifies the runnable jar file
-   * Example: spades-data/development/zhibiao/SpadesAnalytics.jar 
+   * Example: spades-data/development/user/SpadesAnalytics.jar 
 * [class name in jar file of s3n]: Input s3 class for [-a] command which specifies the runnable class 
    * Example: com.qmedic.spades.task.examples.mapreduce.WearAndNonWear.ChoiMethodClean
 * [data input path]: Input source data for [-i] command which specifies the source data
@@ -74,7 +74,7 @@ The parameter input format for passing parameters to runnable class is restricte
 Command Line Example
 --------------------
 ```ShellSession
-java -cp output/SpadesAnalytics.jar com.qmedic.spades.task.SpadesSubmit -cluster MapReduce -mode Once -speed 32x -filesystem s3n -jar spades-data/development/zhibiao/SpadesAnalytics.jar -classpath com.qmedic.spades.task.examples.mapreduce.WearAndNonWear.ChoiMethodClean -input spades-data/development/stanford/2/StanfordStudyYouth2/1/MetaData-ActivityCountClean-2015-10-29-10-50-21-021/*   -key "yourAccessKey" -secret "yourSecretKey" -duration 4 -cost 20 -p "-c false -f s3n -j spades-data/development/zhibiao/SpadesAnalytics.jar -a com.qmedic.spades.task.examples.mapreduce.WearAndNonWear.ChoiMethodClean -i spades-data/development/stanford/2/StanfordStudyYouth2/1/MetaData-ActivityCountClean-2015-10-29-10-50-21-021/*
+java -cp output/SpadesAnalytics.jar com.qmedic.spades.task.SpadesSubmit -cluster MapReduce -mode Once -speed 32x -filesystem s3n -jar spades-data/development/user/SpadesAnalytics.jar -classpath com.qmedic.spades.task.examples.mapreduce.WearAndNonWear.ChoiMethodClean -input spades-data/development/stanford/2/StanfordStudyYouth2/1/MetaData-ActivityCountClean-2015-10-29-10-50-21-021/*   -key "yourAccessKey" -secret "yourSecretKey" -duration 4 -cost 20 -p "-c false -f s3n -j spades-data/development/user/SpadesAnalytics.jar -a com.qmedic.spades.task.examples.mapreduce.WearAndNonWear.ChoiMethodClean -i spades-data/development/stanford/2/StanfordStudyYouth2/1/MetaData-ActivityCountClean-2015-10-29-10-50-21-021/*
 ```
 
 Output
