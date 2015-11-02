@@ -106,4 +106,4 @@ Here it is assumed that the accelerometer has three axis accelerations.
 
 References
 ----------
-L. Choi, S.C. Ward, J.F. Schnelle, M.S. Buchowski. Assessment of Wear/Nonwear Time Classification Algorithms for Triaxial Accelerometer. Med Sci Sports Exerc. 2012 Oct; 44(10): 2009–2016. [Link](http://www.ncbi.nlm.nih.gov/pubmed/22525772)
+[L. Choi, S.C. Ward, J.F. Schnelle, M.S. Buchowski. Assessment of Wear/Nonwear Time Classification Algorithms for Triaxial Accelerometer. Med Sci Sports Exerc. 2012 Oct; 44(10): 2009–2016.](http://www.ncbi.nlm.nih.gov/pubmed/22525772)
